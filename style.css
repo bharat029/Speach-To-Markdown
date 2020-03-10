@@ -1,6 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+body {
+  background-color: #252525;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.75rem;
+  margin: 30px;
 }
 
 #main-content {
@@ -16,10 +29,29 @@
   padding: 0 15px;
 }
 
-.btns button {
+#main-content button  {
   font-size: 2rem;
   padding: 10px 25px;
   border-radius: 5px;
+}
+
+#listen {
+  background: #64b5f6;
+}
+
+#listen.listening {
+  background: #f44336;
+  color: white;
+}
+
+#stop {
+  background: #f44336;
+  color: white;
+}
+ 
+#copy {
+  background: #4caf50;
+  margin: 15px 0 15px auto;
 }
 
 .outputs {
