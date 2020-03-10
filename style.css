@@ -17,7 +17,6 @@ h1 {
 }
 
 #main-content {
-  padding: 25px;
   margin: 0 25px;
   border: solid 1px white;
   border-radius: 50px;
@@ -25,14 +24,22 @@ h1 {
 
 .btns {
   display: flex;
-  justify-content: space-between;
-  padding: 0 15px;
+  justify-content: space-around;
+  margin: 0 15px;
+  padding: 25px;
 }
 
-#main-content button  {
+.btns button  {
   font-size: 2rem;
   padding: 10px 25px;
   border-radius: 5px;
+  border: solid 0.5px white;
+}
+
+.btns div {
+  flex-basis: 45%;
+  display: flex;
+  justify-content: space-between;
 }
 
 #listen {
@@ -49,20 +56,24 @@ h1 {
   color: white;
 }
  
+#clear {
+  background: yellow;
+}
+
 #copy {
   background: #4caf50;
-  margin: 15px 0 15px auto;
+  color: white;
 }
 
 .outputs {
   display: flex;
-  margin-top: 15px;
+  margin: 0 25px;
   justify-content: space-evenly;
   min-height: 250px;
 }
 
 .outputs > * {
-  flex-basis: 48%;  
+  flex-basis: 45%;  
   padding: 25px;
   border: solid 1px white;
   border-radius: 25px;

@@ -1,5 +1,6 @@
 const listenBtn = document.querySelector('#listen');
 const stopBtn = document.querySelector('#stop');
+const clearBtn = document.querySelector('#clear');
 const copyBtn = document.querySelector('#copy');
 const editable = document.querySelector('#editable');
 const markdown = document.querySelector('#markdown');
@@ -64,10 +65,14 @@ editable.onkeyup = (e) => {
   });
 }
 
-
 stopBtn.onclick = (e) => {
   listenBtn.classList.remove("listening");
   recognise.stop()
+}
+
+clearBtn.onclick = (e) => {
+  editable.innerHTML = '';
+  markdown.innerHTML = '';
 }
 
 copyBtn.onclick = (e) => {
