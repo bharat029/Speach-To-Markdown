@@ -1,4 +1,5 @@
-const listenBtn = document.querySelector('#main-content > button');
+const listenBtn = document.querySelector('#listen');
+const stopBtn = document.querySelector('#stop');
 const editable = document.querySelector('#editable');
 const markdown = document.querySelector('#markdown');
 const recognise = new webkitSpeechRecognition();
@@ -66,3 +67,9 @@ const capitalize = (text) => {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
+stopBtn.onclick = (e) => {
+  listenBtn.classList.remove("red");
+  listenBtn.classList.add("blue");
+  listenBtn.classList.add("lighten-2");
+  recognise.stop()
+}

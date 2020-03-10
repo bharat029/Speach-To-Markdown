@@ -10,21 +10,28 @@
   border-radius: 50px;
 }
 
-#main-content > button {
+.btns {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.btns button {
   font-size: 2rem;
   padding: 10px 25px;
   border-radius: 5px;
 }
 
-#main-content > div {
+.outputs {
   display: flex;
   margin-top: 15px;
   justify-content: space-evenly;
   min-height: 250px;
 }
 
-#main-content > div > * {
+.outputs > * {
   flex-basis: 48%;  
   padding: 25px;
   border: solid 1px white;
+  border-radius: 25px;
 }
