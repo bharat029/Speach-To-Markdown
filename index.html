@@ -4,37 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      #listen {
-        background: blue;
-        display: block;
-        width: 25%;
-        color: white;
-        font-size: 2rem;  
-        cursor: pointer;
-        border: 1px solid black;
-        border-radius: 5px;
-        margin: 15px auto;
-      }
-      #content {
-        background: #0000ff;
-        color: white;
-        text-align: center;
-        font-size: 1.75rem;
-        padding: 5px;
-        margin: 5px;
-      }
-    </style>
+    
+    <title>Speach To Markdown</title>
+
+    <link rel="stylesheet" href="/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="/materialize/css/style.css">
+    
+    <script src="/materialize/js/materialize.min.js"></script>
   </head>
-  <body>
-    <button id="listen">Listen</button>
-    <p id="content"></p>
+  <body class="grey darken-4 white-text">
+    <h1 class="center">Speach To Markdown</h1>
+    <div id="main-content">
+      <button id="listen" class="blue lighten-2 black-text center-block">Listen</button>
+      <div>
+        <p id="editable" contenteditable="true"></p>
+        <p id="markdown"></p>
+      </div>
+    </div>
     <script src="/index.js"></script>
   </body>
 </html>
