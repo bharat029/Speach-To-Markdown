@@ -44,11 +44,11 @@ const textToMarkdown = (text, editing) => {
   if (heading !== null) {
     markdown.innerHTML = markdown.innerHTML + headingText(heading[1], heading[2])  + '<br>';
   } else if (ol !== null) {
-    markdown.innerHTML = markdown.innerHTML + ol[1] + '. ' + capitalize(ol[2])  + '<br>';
+    markdown.innerHTML = markdown.innerHTML + ol[1] + '. ' + capitalize(ol[2])  + '.<br>';
   } else if (ul !== null) {
-    markdown.innerHTML = markdown.innerHTML + '- ' + capitalize(ul[1])  + '<br>';
-  } else {
-    markdown.innerHTML = markdown.innerHTML + capitalize(text)  + '<br>';
+    markdown.innerHTML = markdown.innerHTML + '- ' + capitalize(ul[1])  + '.<br>';
+  } else if (text) {
+    markdown.innerHTML = markdown.innerHTML + capitalize(text)  + '.<br>';
   }
 }
 
