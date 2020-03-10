@@ -12,6 +12,8 @@ For not it is only able to handle 3 different commands:
    - Say `point number <point number> <Point Content>`.
    - e.g. `point number 1 first point` -> `1. First pooint.`
 
-Note: It can be simply used for Speach To Text as Well.
+**Note**: It can be simply used for Speach To Text as Well.
+
+**Note**: The left half, where the speach to text output appears is editable, so feel free to use it if you are not satisfied with the output you see there.
 
 Click the `Listen` button to indicate that you are ready to speak.
