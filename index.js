@@ -2,6 +2,7 @@ const listenBtn = document.querySelector('#listen');
 const stopBtn = document.querySelector('#stop');
 const clearBtn = document.querySelector('#clear');
 const copyBtn = document.querySelector('#copy');
+const downloadBtn = document.querySelector('#download');
 const editable = document.querySelector('#editable');
 const markdown = document.querySelector('#markdown');
 const recognise = new webkitSpeechRecognition();
@@ -76,11 +77,22 @@ clearBtn.onclick = (e) => {
 }
 
 copyBtn.onclick = (e) => {
-  markdownTxt = markdown.innerHTML.replace(/<br>/g, '\n');
+  const markdownTxt = markdown.innerHTML.replace(/<br>/g, '\n');
   const el = document.createElement('textarea');
   el.value = markdownTxt;
   document.body.appendChild(el);
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);
+}
+
+downloadBtn.onclick = (e) => {
+  let temp = markdown.innerHTML.replace(/<br>/g, '\n');
+  let dataStr = "data:text/plain;charset=utf-8," + encodeURIComponent(temp)
+  const link = document.createElement('a')
+  link.setAttribute('href', dataStr)
+  link.setAttribute('download', 'stm.md')
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
 }
