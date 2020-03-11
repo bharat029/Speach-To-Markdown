@@ -17,26 +17,26 @@ recognise.onresult = (e) => {
 };
 
 const textToMarkdown = (text, editing) => {
-  text = text.replace(/^heading level to$/, 'heading level 2');
-  headingRegEx = /^heading level ([1-6]) (.*)$/;
-  ulRegEx = /^point (.*)$/;
-  olRegEx = /^point number ([0-9]+) (.*)$/;
+  text = text.replace(/^heading level to/i, 'heading level 2');
+  headingRegEx = /^heading level ([1-6]) (.*)$/i;
+  ulRegEx = /^point (.*)$/i;
+  olRegEx = /^point number ([0-9]+) (.*)$/i;
   heading  = text.match(headingRegEx);
   ul  = text.match(ulRegEx);
   ol  = text.match(olRegEx);
   
   if (!editing) {
-    editable.innerHTML = editable.innerHTML + text  + '<br>';
+    editable.value = editable.value + text  + '\n';
   }
 
   if (heading !== null) {
-    markdown.innerHTML = markdown.innerHTML + headingText(heading[1], heading[2])  + '<br>';
+    markdown.value = markdown.value + headingText(heading[1], heading[2])  + '\n';
   } else if (ol !== null) {
-    markdown.innerHTML = markdown.innerHTML + ol[1] + '. ' + capitalize(ol[2])  + '.<br>';
+    markdown.value = markdown.value + ol[1] + '. ' + capitalize(ol[2])  + '.\n';
   } else if (ul !== null) {
-    markdown.innerHTML = markdown.innerHTML + '- ' + capitalize(ul[1])  + '.<br>';
-  } else if (text) {
-    markdown.innerHTML = markdown.innerHTML + capitalize(text)  + '.<br>';
+    markdown.value = markdown.value + '- ' + capitalize(ul[1])  + '.\n';
+  } else if (text && text !== 0) {
+    markdown.value = markdown.value + capitalize(text)  + '.\n';
   }
 }
 
@@ -59,9 +59,9 @@ listenBtn.onclick = (e) => {
 };
 
 editable.onkeyup = (e) => {
-  markdown.innerHTML = '';
+  markdown.value = '';
 
-  e.target.innerHTML.split('<br>').map((val, idx) => {
+  e.target.value.split('\n').map((val, idx) => {
     textToMarkdown(val, true);
   });
 }
@@ -72,12 +72,12 @@ stopBtn.onclick = (e) => {
 }
 
 clearBtn.onclick = (e) => {
-  editable.innerHTML = '';
-  markdown.innerHTML = '';
+  editable.value = '';
+  markdown.value = '';
 }
 
 copyBtn.onclick = (e) => {
-  const markdownTxt = markdown.innerHTML.replace(/<br>/g, '\n');
+  const markdownTxt = markdown.value;
   const el = document.createElement('textarea');
   el.value = markdownTxt;
   document.body.appendChild(el);
@@ -87,7 +87,7 @@ copyBtn.onclick = (e) => {
 }
 
 downloadBtn.onclick = (e) => {
-  let temp = markdown.innerHTML.replace(/<br>/g, '\n');
+  let temp = markdown.value;
   let dataStr = "data:text/plain;charset=utf-8," + encodeURIComponent(temp)
   const link = document.createElement('a')
   link.setAttribute('href', dataStr)

@@ -8,20 +8,23 @@
     <title>Speach To Markdown</title>
 
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   </head>
   <body>
     <h1>Speach To Markdown</h1>
     <div id="main-content">
       <div class="btns">
-        <button id="listen">Listen</button>
-        <button id="stop">Stop</button>
-        <button id="copy">Copy</button>
-        <button id="clear">Clear</button>
-        <button id="download">Download</button>
+        <button id="listen"><i class="fas fa-microphone	""></i><span style="font-size: 0;">Mike</span></button>
+        <button id="stop"><i class="fas fa-stop	"></i><span style="font-size: 0;">Stop</span></button>
+        <button id="copy"><i class='far fa-copy'></i><span style="font-size: 0;">Copy</span></button>
+        <button id="clear"><i class="fas fa-redo	"></i><span style="font-size: 0;">Clear</span></button>
+        <button id="download"><i class='fas fa-download'></i><span style="font-size: 0;">Download</span></button>
       </div>
       <div class="outputs"> 
-        <p id="editable" contenteditable="true"></p>
-        <p id="markdown"></p>
+        <textarea id="editable" contenteditable="true"></textarea>
+        <textarea id="markdown"></textarea>
       </div>
       <div class="btns">
       </div>
